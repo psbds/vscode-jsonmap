@@ -10,14 +10,19 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vscode-jsonmap.openParser"
+		"onCommand:vscode-jsonmap.openParser",
+		"onCommand:vscode-jsonmap.clearCache"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "vscode-jsonmap.openParser",
-				"title": "JsonMap: Run Map Command"
+				"title": "JsonMap: Open Command Parser"
+			},
+			{
+				"command": "vscode-jsonmap.clearCache",
+				"title": "JsonMap: Clear Cache"
 			}
 		]
 	},
