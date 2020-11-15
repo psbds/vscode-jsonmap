@@ -1,7 +1,5 @@
 import * as vscode from 'vscode';
 
-export const ACTIVE_PANELS: ActivePanel[] = [];
-
 export class ActivePanel {
     constructor(uri: vscode.Uri, command: string, panel: vscode.WebviewPanel) {
         this.uri = uri;
