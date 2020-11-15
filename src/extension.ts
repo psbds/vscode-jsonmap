@@ -1,13 +1,18 @@
 import * as vscode from 'vscode';
-import { JsonMapParser } from './JsonMapParser';
-import * as path from 'path';
+import { ParserExtension } from './ParserExtension';
+import { clearCache } from './ParserInstanceCache';
+
 export function activate(context: vscode.ExtensionContext) {
-	var jsonMapParser = new JsonMapParser();
 
-	let disposable = vscode.commands.registerCommand('vscode-jsonmap.openParser', function (command: any) {
-		return jsonMapParser.execute(command);
-	});
 
-	context.subscriptions.push(disposable);
+
+	context.subscriptions.push(vscode.commands.registerCommand('vscode-jsonmap.openParser', function (command: any) {
+		let parserExtension = new ParserExtension();
+		return parserExtension.execute(command);
+	}));
+
+	context.subscriptions.push(vscode.commands.registerCommand('vscode-jsonmap.clearCache', function (command: any) {
+		clearCache();
+	}));
 }
 export function deactivate() { }

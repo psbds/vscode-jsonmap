@@ -337,5 +337,9 @@ class TestHelper {
         ];
         return JSON.stringify(doc);
     }
+
+    public getMockInvalidDocument(): string {
+        return "{error";
+    }
 }
 export default new TestHelper();

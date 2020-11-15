@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-export class ActivePanel {
+export class ParserInstance {
     constructor(uri: vscode.Uri, command: string, panel: vscode.WebviewPanel) {
         this.uri = uri;
         this.panel = panel;
