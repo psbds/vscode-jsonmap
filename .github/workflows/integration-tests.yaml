@@ -27,4 +27,4 @@ jobs:
     - name: Test
       uses: GabrielBB/xvfb-action@v1.0
       with:
-        run: npm test
+        run: npm run-script compile && npm test
