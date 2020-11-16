@@ -1,65 +1,42 @@
-# vscode-jsonmap README
+# VSCode JsonMap
 
-This is the README for your extension "vscode-jsonmap". After writing up a brief description, we recommend including the following sections.
+The JsonMap extension provides the capabilities of running javascript commands like: map, filter, find, reduce and more in your open Json files, making it easier and quicker to extract insights of temporary files without needing to install additional software or creating temporary code.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+* Get only the names of a JSON Array using ```.map``` function
+<br/><br/>
+<img src="resources/docs/map-sample.gif" width="1000px"/>
+<br/><br/>
 
-For example if there is an image subfolder under your extension project workspace:
+* Get only the records of a JSON Array with age greater than 30 using ```.filter``` function
+<br/><br/>
+<img src="resources/docs/filter-sample.gif" width="1000px"/>
+<br/><br/>
 
-\!\[feature X\]\(images/feature-x.png\)
+* Find the record with an specific name on a JSON Array using ```.find``` function
+<br/><br/>
+<img src="resources/docs/find-sample.gif" width="1000px"/>   
+<br/><br/>
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+* Get the sum of all ages in a JSON Array using ```.reduce``` function
+<br/><br/>
+<img src="resources/docs/reduce-sample.gif" width="1000px"/>   
+<br/><br/>
 
-## Requirements
+## How to use it
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+1. Install the extension
+2. Open your JSON file in your VSCode editor
+3. Open the command window (```ctrl+shift+p``` on widows) and search for the command ```JsonMap: Open Command Parser```
+4. Enter your parse command. (e.g.: ```data.map(x => x.name)```)
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- None
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+* 0.1.0
+    * Initial Relase of JsonMap Extension

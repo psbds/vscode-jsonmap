@@ -3,13 +3,25 @@
 	"displayName": "vscode-jsonmap",
 	"publisher": "psbds",
 	"description": "A tool to execute javascript map functions in JSON files.",
-	"version": "0.0.1",
+	"version": "0.1.0",
+	"icon": "resources/icon.png",
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/psbds/vscode-jsonmap"
+    },
 	"engines": {
 		"vscode": "^1.51.0"
 	},
 	"categories": [
+		"Programming Languages",
 		"Other"
 	],
+	"keywords": [
+        "json",
+        "jsonmap",
+        "jsonfilter",
+        "jsonparse"
+    ],
 	"activationEvents": [
 		"onCommand:vscode-jsonmap.openParser",
 		"onCommand:vscode-jsonmap.clearCache"
