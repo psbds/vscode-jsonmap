@@ -23,17 +23,6 @@ jobs:
       run: |
         npm ci
         npm install -g vsce
-
-    - name: "Set prepublish script for debug build"
-      shell: pwsh
-      run: |
-        $packageManifest = Get-Content './package.json' | ConvertFrom-Json -NoEnumerate
-        $packageManifest.scripts.'vscode:prepublish' = 'webpack --mode development'
-        $packageManifest | ConvertTo-Json -Depth 100 | Out-File -FilePath './package.json' -Encoding 'utf8NoBOM'
-        
-    - name: Build debug
-      run: |
-        vsce package --out debug.vsix
         
     - name: Test
       uses: GabrielBB/xvfb-action@v1.0

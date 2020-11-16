@@ -12,5 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.commands.registerCommand('vscode-jsonmap.clearCache', function (command: any) {
 		clearCache();
 	}));
+	console.log("Extensions Activated");
 }
+
 export function deactivate() { }
