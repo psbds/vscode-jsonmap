@@ -14,6 +14,7 @@ suite('Integration Tests', () => {
 
 	test('Parse Successful', async () => {
 		await TestHelper.activateExtesion();
+		console.log(JSON.stringify((await vscode.commands.getCommands()).filter(x => x.includes("clearCache"))));
 		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 		await vscode.commands.executeCommand("workbench.action.closeAllEditors");
 
