@@ -4,8 +4,6 @@ import { clearCache } from './ParserInstanceCache';
 
 export function activate(context: vscode.ExtensionContext) {
 
-
-
 	context.subscriptions.push(vscode.commands.registerCommand('vscode-jsonmap.openParser', function (command: any) {
 		let parserExtension = new ParserExtension();
 		return parserExtension.execute(command);
@@ -14,5 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.commands.registerCommand('vscode-jsonmap.clearCache', function (command: any) {
 		clearCache();
 	}));
+	console.log("Extensions Activated");
 }
+
 export function deactivate() { }

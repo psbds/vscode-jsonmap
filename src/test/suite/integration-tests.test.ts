@@ -1,10 +1,5 @@
 import * as assert from 'assert';
-
-// You can import and use all API from the 'vscode' module
-// as well as import your extension to test it
 import * as vscode from 'vscode';
-// import * as myExtension from '../../extension';
-import * as path from 'path';
 import TestHelper from '../TestHelper';
 import { ParserInstance } from '../../ParserInstance';
 import ParserExtensionResult from '../../ParserExtensionResult';
@@ -14,8 +9,8 @@ suite('Integration Tests', () => {
 
 	test('Parse Successful', async () => {
 		await TestHelper.activateExtesion();
-		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 		await vscode.commands.executeCommand("workbench.action.closeAllEditors");
+		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 
 		var docContent = TestHelper.getMockValidDocument();
 		var doc = await TestHelper.createTempDocument(docContent);
@@ -32,8 +27,8 @@ suite('Integration Tests', () => {
 
 	test('Parse Error', async () => {
 		await TestHelper.activateExtesion();
-		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 		await vscode.commands.executeCommand("workbench.action.closeAllEditors");
+		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 
 		var docContent = TestHelper.getMockInvalidDocument();
 		var doc = await TestHelper.createTempDocument(docContent);
@@ -47,8 +42,8 @@ suite('Integration Tests', () => {
 
 	test('Parse Ignore when not active documents', async () => {
 		await TestHelper.activateExtesion();
-		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 		await vscode.commands.executeCommand("workbench.action.closeAllEditors");
+		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 
 		var extensionResult: ParserExtensionResult = await vscode.commands.executeCommand("vscode-jsonmap.openParser", "data.map(x=> x.index)");
 

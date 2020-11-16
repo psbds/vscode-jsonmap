@@ -5,7 +5,8 @@ class TestHelper {
 
     public async activateExtesion(): Promise<void> {
         var ext = vscode.extensions.all.find(e => e.id.includes("vscode-jsonmap"));
-        ext.activate();
+        console.log(`Activating the Extension ${ext.id} / ${ext.extensionPath} / ${ext.extensionUri}`);
+        return await ext.activate();
     }
 
     public async createTempDocument(content: string): Promise<vscode.TextDocument> {

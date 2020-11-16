@@ -19,10 +19,14 @@ jobs:
       with:
         node-version: 14.x
 
-    - name: Install Node Dependencies on API
+    - name: "Install dependencies"
       run: |
-        npm install
-        
-    - name: Install Node Dependencies on API
+        npm ci
+        npm install -g vsce
+    - name: "Compile"
       run: |
-        npm test
+        npm run-script compile
+    - name: Test
+      uses: GabrielBB/xvfb-action@v1.0
+      with:
+        run: npm test
