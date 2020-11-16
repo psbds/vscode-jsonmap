@@ -11,7 +11,6 @@ suite('Integration Tests', () => {
 		await TestHelper.activateExtesion();
 		await vscode.commands.executeCommand("workbench.action.closeAllEditors");
 		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
-		throw new Error("test error");
 
 		var docContent = TestHelper.getMockValidDocument();
 		var doc = await TestHelper.createTempDocument(docContent);
