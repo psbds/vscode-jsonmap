@@ -15,8 +15,8 @@ suite('Integration Tests', () => {
 	test('Parse Successful', async () => {
 		await TestHelper.activateExtesion();
 		console.log(JSON.stringify((await vscode.commands.getCommands()).filter(x => x.includes("clearCache"))));
-		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 		await vscode.commands.executeCommand("workbench.action.closeAllEditors");
+		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 
 		var docContent = TestHelper.getMockValidDocument();
 		var doc = await TestHelper.createTempDocument(docContent);
@@ -33,8 +33,8 @@ suite('Integration Tests', () => {
 
 	test('Parse Error', async () => {
 		await TestHelper.activateExtesion();
-		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 		await vscode.commands.executeCommand("workbench.action.closeAllEditors");
+		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 
 		var docContent = TestHelper.getMockInvalidDocument();
 		var doc = await TestHelper.createTempDocument(docContent);
@@ -48,8 +48,8 @@ suite('Integration Tests', () => {
 
 	test('Parse Ignore when not active documents', async () => {
 		await TestHelper.activateExtesion();
-		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 		await vscode.commands.executeCommand("workbench.action.closeAllEditors");
+		await vscode.commands.executeCommand("vscode-jsonmap.clearCache");
 
 		var extensionResult: ParserExtensionResult = await vscode.commands.executeCommand("vscode-jsonmap.openParser", "data.map(x=> x.index)");
 
