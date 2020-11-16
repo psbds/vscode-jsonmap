@@ -10,8 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vscode-jsonmap.openParser",
-		"onCommand:vscode-jsonmap.clearCache"
+		"*"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
