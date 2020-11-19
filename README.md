@@ -38,5 +38,8 @@ The JsonMap extension provides the capabilities of running javascript commands l
 ## Release Notes
 
 
+* 0.1.1
+    * Fixing GitHub Actions deployment pipelines
+    
 * 0.1.0
     * Initial Relase of JsonMap Extension
