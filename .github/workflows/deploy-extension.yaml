@@ -1,0 +1,44 @@
+name: Deployment [Release]
+
+on:
+  workflow_dispatch:
+  release:
+    types: [released]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v1.4.4
+      with:
+        node-version: 14.x
+
+    - name: "Install dependencies"
+      run: |
+        npm ci
+        npm install -g vsce
+
+    - name: "Compile"
+      run: |
+        npm run-script compile
+
+    - name: Test
+      uses: GabrielBB/xvfb-action@v1.0
+      with:
+        run: npm test
+
+    - name: Get Version Number
+      id: getVersion
+      run: |
+        version=$(echo "${{ github.event.release.tag_name }}" | tr -d [:alpha:])
+        echo $version
+        echo "::set-output name=VERSION::$version"
+
+    - name: Publish
+      run: |
+        git config --global user.name "psbds"
+        git config --global user.email "psbds_filho@hotmail.com"
+        vsce publish ${{ steps.getVersion.outputs.VERSION }} -p ${{ secrets.VSCE_PAT }}

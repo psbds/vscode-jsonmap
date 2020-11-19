@@ -1,23 +1,41 @@
 {
 	"name": "vscode-jsonmap",
-	"displayName": "vscode-jsonmap",
+	"displayName": "JsonMap",
+	"publisher": "psbds",
 	"description": "A tool to execute javascript map functions in JSON files.",
-	"version": "0.0.1",
+	"version": "0.1.0",
+	"icon": "resources/icon.png",
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/psbds/vscode-jsonmap"
+    },
 	"engines": {
 		"vscode": "^1.51.0"
 	},
 	"categories": [
+		"Programming Languages",
 		"Other"
 	],
+	"keywords": [
+        "json",
+        "jsonmap",
+        "jsonfilter",
+        "jsonparse"
+    ],
 	"activationEvents": [
-		"onCommand:vscode-jsonmap.openParser"
+		"onCommand:vscode-jsonmap.openParser",
+		"onCommand:vscode-jsonmap.clearCache"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "vscode-jsonmap.openParser",
-				"title": "JsonMap: Run Map Command"
+				"title": "JsonMap: Open Command Parser"
+			},
+			{
+				"command": "vscode-jsonmap.clearCache",
+				"title": "JsonMap: Clear Cache"
 			}
 		]
 	},
@@ -30,7 +48,8 @@
 		"test-watch": "tsc -watch -p ./",
 		"pretest": "npm run test-compile && npm run lint",
 		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
+		"test": "node ./out/test/runTest.js",
+		"deploy": "vsce publish --yarn"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.51.0",
