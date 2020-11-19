@@ -1,6 +1,6 @@
 {
 	"name": "vscode-jsonmap",
-	"displayName": "vscode-jsonmap",
+	"displayName": "JsonMap",
 	"publisher": "psbds",
 	"description": "A tool to execute javascript map functions in JSON files.",
 	"version": "0.1.0",
