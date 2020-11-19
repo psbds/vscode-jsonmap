@@ -34,9 +34,8 @@ jobs:
       id: getVersion
       run: |
         version=$(echo "${{ github.event.release.tag_name }}" | tr -d [:alpha:])
-        echo '::set-output name=VERSION::$version'
+        echo $version
+        echo "::set-output name=VERSION::$version"
 
     - name: Publish
-      run: vsce publish ${{ steps.getVersion.outputs.VERSION }}
-      env:
-        VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      run: vsce publish ${{ steps.getVersion.outputs.VERSION }} -p ${{ secrets.VSCE_PAT }}
