@@ -38,4 +38,7 @@ jobs:
         echo "::set-output name=VERSION::$version"
 
     - name: Publish
-      run: vsce publish ${{ steps.getVersion.outputs.VERSION }} -p ${{ secrets.VSCE_PAT }}
+      run: |
+        git config --global user.name "psbds"
+        git config --global user.email "psbds_filho@hotmail.com"
+        vsce publish ${{ steps.getVersion.outputs.VERSION }} -p ${{ secrets.VSCE_PAT }}
