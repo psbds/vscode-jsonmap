@@ -6,22 +6,22 @@ The JsonMap extension provides the capabilities of running javascript commands l
 
 * Get only the names of a JSON Array using ```.map``` function
 <br/><br/>
-<img src="resources/docs/map-sample.gif" width="1000px"/>
+![](resources/docs/map-sample.gif)
 <br/><br/>
 
 * Get only the records of a JSON Array with age greater than 30 using ```.filter``` function
 <br/><br/>
-<img src="resources/docs/filter-sample.gif" width="1000px"/>
+![](resources/docs/filter-sample.gif)
 <br/><br/>
 
 * Find the record with an specific name on a JSON Array using ```.find``` function
 <br/><br/>
-<img src="resources/docs/find-sample.gif" width="1000px"/>   
+![](resources/docs/find-sample.gif) 
 <br/><br/>
 
 * Get the sum of all ages in a JSON Array using ```.reduce``` function
 <br/><br/>
-<img src="resources/docs/reduce-sample.gif" width="1000px"/>   
+![](resources/docs/reduce-sample.gif)
 <br/><br/>
 
 ## How to use it
