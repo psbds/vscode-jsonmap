@@ -37,6 +37,6 @@ jobs:
         echo '::set-output name=VERSION::$version'
 
     - name: Publish
-      run: npm run deploy ${{ steps.getVersion.outputs.VERSION }}
+      run: vsce publish ${{ steps.getVersion.outputs.VERSION }}
       env:
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
